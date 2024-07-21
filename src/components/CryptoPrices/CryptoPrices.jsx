@@ -104,10 +104,12 @@ export default function CryptoPrices() {
               </tr>
             </thead>
             <tbody>
-              {cryptoPrices ? (
-                <CryptoPricesRows data={cryptoPrices} />
+              {!isLoading ? (
+                cryptoPrices && <CryptoPricesRows data={cryptoPrices} />
               ) : (
-                <span>Loading...</span>
+                <tr>
+                  <td>Loading...</td>
+                </tr>
               )}
             </tbody>
           </table>
